@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="GIk-dw-Eql">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--宝典-->
+        <scene sceneID="Vyh-O7-gUh">
+            <objects>
+                <tableViewController id="BeN-Rz-KtA" customClass="MainTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cwa-St-6ao">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="请输入搜索关键字" showsCancelButton="YES" showsScopeBar="YES" id="w8r-Dh-FP6">
+                            <rect key="frame" x="0.0" y="64" width="320" height="88"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>按字母</string>
+                                <string>按汉字</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="BeN-Rz-KtA" id="xu4-G1-NjV"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bookCell" id="dno-Ml-Mta">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dno-Ml-Mta" id="agL-Ly-aSa">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qsa-M7-X1S" kind="push" id="8Hb-Xm-X5K"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BeN-Rz-KtA" id="db9-kt-7Ev"/>
+                            <outlet property="delegate" destination="BeN-Rz-KtA" id="XBh-sR-u3k"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="宝典" id="xpU-I6-cev">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="wcr-1c-lyZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="bvy-zP-11N" id="UTz-s6-lqE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZQ-kI-863" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="4VQ-SX-icI">
+                    <connections>
+                        <outlet property="delegate" destination="BeN-Rz-KtA" id="WiI-KM-Ybk"/>
+                        <outlet property="searchContentsController" destination="BeN-Rz-KtA" id="Inj-A2-ogL"/>
+                        <outlet property="searchResultsDataSource" destination="BeN-Rz-KtA" id="A2U-Ud-uEN"/>
+                        <outlet property="searchResultsDelegate" destination="BeN-Rz-KtA" id="Gh3-3E-kWr"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="akj-aS-SSx">
+                    <connections>
+                        <outlet property="delegate" destination="BeN-Rz-KtA" id="riC-UK-ZpO"/>
+                        <outlet property="searchContentsController" destination="BeN-Rz-KtA" id="dje-H0-sHc"/>
+                        <outlet property="searchResultsDataSource" destination="BeN-Rz-KtA" id="EYV-FJ-Lf0"/>
+                        <outlet property="searchResultsDelegate" destination="BeN-Rz-KtA" id="kLw-3T-278"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="bvy-zP-11N">
+                    <connections>
+                        <outlet property="delegate" destination="BeN-Rz-KtA" id="GPn-hl-B58"/>
+                        <outlet property="searchBar" destination="w8r-Dh-FP6" id="lcW-cO-ihf"/>
+                        <outlet property="searchContentsController" destination="BeN-Rz-KtA" id="w9v-Ke-V3q"/>
+                        <outlet property="searchResultsDataSource" destination="BeN-Rz-KtA" id="Uwm-U8-hjU"/>
+                        <outlet property="searchResultsDelegate" destination="BeN-Rz-KtA" id="nLG-bs-tH6"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="67" y="405"/>
+        </scene>
+        <!--宝典详情-->
+        <scene sceneID="ao1-yO-lfU">
+            <objects>
+                <tableViewController id="Qsa-M7-X1S" customClass="NextTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="044-sc-6Wh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nameCell" id="aoO-EC-fL3">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aoO-EC-fL3" id="6OY-Mh-eGS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qsa-M7-X1S" id="6c4-iU-e8f"/>
+                            <outlet property="delegate" destination="Qsa-M7-X1S" id="fKn-l1-Wt8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="宝典详情" id="CXU-cg-Q1r"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gg-Q7-o4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="411"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8gu-Q9-H7l">
+            <objects>
+                <navigationController id="GIk-dw-Eql" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfE-C8-QqK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BeN-Rz-KtA" kind="relationship" relationship="rootViewController" id="lhc-ev-apa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4H-8q-5lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-347" y="411"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
